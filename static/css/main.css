@@ -28,3 +28,11 @@ img {
 .text-right {
     text-align: right;
 }
+
+.red {
+    color:red !important;
+}
+
+.hidden {
+    display: none !important;
+}

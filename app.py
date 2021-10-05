@@ -14,11 +14,7 @@ def home():
 @app.route('/forward/', methods=["POST"])
 def insert():
     data = request.form
-
-    if len(set(data.values())) != 4:
-        return redirect(url_for('home'))
-
-    for k, rank in request.form.items():
+    for k, rank in data.items():
         img_set, name = k.split('/')[-2:]
         db.insert(int(img_set), int(name.split('.')[0]), int(rank))
 
