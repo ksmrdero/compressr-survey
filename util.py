@@ -8,7 +8,7 @@ def retrieve_imgs(base_url=r'https://compressrimages.blob.core.windows.net/'):
     blob_service_client = BlobServiceClient.from_connection_string(connect_str)
 
     containers = [x.name for x in blob_service_client.list_containers()]
-    
+
     ind = random.randrange(len(containers))
 
     # get a random container
@@ -19,6 +19,6 @@ def retrieve_imgs(base_url=r'https://compressrimages.blob.core.windows.net/'):
     files = [x.name for x in container_client.list_blobs()]
     inds = random.sample([i for i in range(len(files))], k=4)
     ret_files = [os.path.join(base_url, container_name,
-                            files[i]).replace('\\', '/') for i in inds]
-    
+                              files[i]).replace('\\', '/') for i in inds]
+
     return ret_files

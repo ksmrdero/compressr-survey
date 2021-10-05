@@ -1,6 +1,6 @@
-from sqlalchemy import create_engine
-import urllib
 import os
+import urllib
+from sqlalchemy import create_engine
 
 
 class SqlDb:
@@ -8,7 +8,8 @@ class SqlDb:
         self.engine = self.start_engine()
 
     def start_engine(self):
-        params = urllib.parse.quote_plus(str(os.getenv('SQL_CONNECTION_STRING')))
+        params = urllib.parse.quote_plus(
+            str(os.getenv('SQL_CONNECTION_STRING')))
         conn_str = 'mssql+pyodbc:///?odbc_connect={}'.format(params)
         return create_engine(conn_str, echo=True)
 
