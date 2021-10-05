@@ -1,0 +1,30 @@
+html, body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    /* overflow-y: hidden; */
+}
+.container {
+    /* font-size: 0; fix inline gaps */
+    height: 100%;
+}
+
+.col {
+    width: 50%;
+    /* padding: 2px !important;  */
+    height: 100% !important;
+    text-align: center;
+}
+/* .row {
+    height: 50% !important;
+} */
+
+img {
+    padding: 0px;
+    height: 100% !important;
+}
+
+.text-right {
+    text-align: right;
+}
