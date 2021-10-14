@@ -1,6 +1,7 @@
 import os
 import urllib
 from sqlalchemy import create_engine
+from datetime import datetime
 
 
 class SqlDb:
@@ -14,9 +15,10 @@ class SqlDb:
         return create_engine(conn_str, echo=True)
 
     def insert(self, imageSet, imageName, rank):
-
+        now = datetime.now()
+        date = now.strftime('%Y-%m-%d %H:%M:%S')
         with self.engine.connect() as con:
-            statement = """INSERT INTO ranks (ImageSet, ImageName, Rank)
-                    VALUES (%d, %d, %d);""" % (imageSet, imageName, rank)
+            statement = """INSERT INTO ranks (ImageSet, ImageName, Rank, Date)
+                    VALUES (%d, %d, %d, '%s');""" % (imageSet, imageName, rank, date)
 
             con.execute(statement)
