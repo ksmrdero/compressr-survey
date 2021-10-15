@@ -22,7 +22,9 @@ body {
 
 img {
     padding: 0px;
-    height: 100% !important;
+    /* height: 50% !important; */
+    /* height: auto; */
+    /* width: 70% !important; */
 }
 
 .text-right {
@@ -36,3 +38,11 @@ img {
 .hidden {
     visibility: hidden !important;
 }
+
+/* .top-left {
+  position: absolute !important;
+  margin-top: -50px;
+  z-index: 100;
+  font-size: 2em !important;
+  color: #66ff00;
+} */
