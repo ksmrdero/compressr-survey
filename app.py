@@ -15,10 +15,16 @@ def home():
 def insert():
     data = request.form
     for k, rank in data.items():
-        img_set, name = k.split('/')[-2:]
-        db.insert(int(img_set), int(name.split('.')[0]), int(rank))
+        # ex: https://compressrimages.blob.core.windows.net/801/bmshj2018-factorized2/0.png
+        img_set, model, name = k.split('/')[-3:] 
+        db.insert(
+            imageSet=int(img_set), 
+            imageName=int(name.split('.')[0]),
+            rank=int(rank), 
+            model=model
+        )
 
     return redirect(url_for('home'))
 
 if __name__ == '__main__':
-    app.run(threaded=True)
+    app.run(threaded=True, debug=True)
