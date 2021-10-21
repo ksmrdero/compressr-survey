@@ -27,4 +27,4 @@ def insert():
     return redirect(url_for('home'))
 
 if __name__ == '__main__':
-    app.run(threaded=True, debug=True)
+    app.run(threaded=True)
